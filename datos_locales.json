@@ -56,12 +56,9 @@
             },
             "egresos": {
                 "alquiler_y_expensas": 13042947,
-                "costo_laboral": 54753592,
-                "costo_laboral_extraordinario": 4187858,
-                "descartables_y_consumibles": 3483581,
-                "equipamiento_y_bazar": 1732271,
-                "bienes_de_uso_y_utiles": 1700271,
-                "carteleria": 32000,
+                "costo_laboral": 25698657,
+                "costo_laboral_extraordinario": 2093829,
+                "descartables_y_consumibles": 2765134,
                 "gastos_bancarios_y_comisiones": 4961316,
                 "honorarios": 3196333,
                 "impuestos": 3988464,
@@ -76,9 +73,9 @@
                 "varios_libreria": 182441,
                 "viaticos": 315448
             },
-            "total_egresos": 133741098,
-            "resultado_economico": -12327075,
-            "utilidad_sobre_ventas_pct": -10.2
+            "total_egresos": 98409145,
+            "resultado_economico": 23004878,
+            "utilidad_sobre_ventas_pct": 18.9
         },
         "san_telmo": {
             "ventas_netas_en_blanco": 27761384,

@@ -2,26 +2,168 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indicadores Económicos - Mayo</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; margin: 0; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-        h1 { color: #2c3e50; text-align: center; margin-bottom: 10px; }
-        .nav { text-align: center; margin-bottom: 30px; }
-        .nav a { margin: 0 15px; text-decoration: none; color: #3498db; font-weight: bold; font-size: 16px; padding: 6px 12px; border-radius: 4px; border: 1px solid #3498db; }
-        .nav a.active { background-color: #3498db; color: white; }
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 40px; text-transform: capitalize; }
-        .summary-box { display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #3498db; flex-wrap: wrap; gap: 10px; }
-        .summary-box.consolidado { background: #ebf8ff; border-left: 4px solid #3182ce; border-top: 2px solid #bee3f8; }
-        .summary-item { text-align: center; flex: 1; min-width: 130px; }
-        .summary-item span { display: block; font-size: 13px; color: #7f8c8d; }
-        .summary-item strong { font-size: 15px; color: #2c3e50; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 30px; }
-        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; }
-        th { background-color: #2c3e50; color: white; font-weight: 600; }
-        .text-right { text-align: right; }
-        .negative { color: #e74c3c; font-weight: bold; }
-        .positive { color: #27ae60; font-weight: bold; }
+        :root {
+            --primary: #2b6cb0;
+            --primary-hover: #2c5282;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-muted: #718096;
+            --border-color: #e2e8f0;
+            --negative: #e53e3e;
+            --positive: #38a169;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        h1 {
+            color: var(--text-main);
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 26px;
+        }
+
+        .nav {
+            text-align: center;
+            margin-bottom: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 15px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid #cbd5e0;
+            background: #fff;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover {
+            background-color: #ebf8ff;
+            border-color: var(--primary);
+        }
+
+        .nav a.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        h2 {
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            font-size: 20px;
+            text-transform: capitalize;
+        }
+
+        .summary-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 15px;
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .summary-box.consolidado {
+            background: #ebf8ff;
+            border-left: 5px solid #3182ce;
+            border-color: #bee3f8;
+        }
+
+        .summary-item {
+            text-align: center;
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .summary-item span {
+            display: block;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-item strong {
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            margin-bottom: 30px;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+            font-weight: 600;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .negative {
+            color: var(--negative);
+            font-weight: bold;
+        }
+
+        .positive {
+            color: var(--positive);
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -31,7 +173,6 @@
             <a href="mayo.html" class="active">Mayo 2026</a>
             <a href="junio.html" class="">Junio 2026</a>
         </div>
-        
         
         <h2>📊 Consolidado General (Mayo)</h2>
         <div class="summary-box consolidado">
@@ -51,114 +192,94 @@
                 </tr>
             </thead>
             <tbody>
-        
                 <tr>
                     <td>Alquiler Y Expensas</td>
                     <td class="text-right">$21.776.050</td>
                 </tr>
-            
                 <tr>
                     <td>Bienes De Uso Y Utiles</td>
                     <td class="text-right">$1.835.655</td>
                 </tr>
-            
                 <tr>
                     <td>Carteleria</td>
                     <td class="text-right">$32.000</td>
                 </tr>
-            
                 <tr>
                     <td>Costo Laboral</td>
                     <td class="text-right">$78.626.767</td>
                 </tr>
-            
                 <tr>
                     <td>Costo Laboral Extraordinario</td>
                     <td class="text-right">$6.829.497</td>
                 </tr>
-            
                 <tr>
                     <td>Descartables Y Consumibles</td>
                     <td class="text-right">$8.991.764</td>
                 </tr>
-            
                 <tr>
                     <td>Equipamiento Y Bazar</td>
                     <td class="text-right">$2.696.337</td>
                 </tr>
-            
                 <tr>
                     <td>Gastos Bancarios Y Comisiones</td>
                     <td class="text-right">$8.107.985</td>
                 </tr>
-            
                 <tr>
                     <td>Honorarios</td>
                     <td class="text-right">$6.285.000</td>
                 </tr>
-            
                 <tr>
                     <td>Impuestos</td>
                     <td class="text-right">$6.504.451</td>
                 </tr>
-            
                 <tr>
                     <td>Mantenimiento Del Local</td>
                     <td class="text-right">$7.892.028</td>
                 </tr>
-            
                 <tr>
                     <td>Materia Prima</td>
                     <td class="text-right">$57.673.501</td>
                 </tr>
-            
                 <tr>
                     <td>Otras Comisiones Apps</td>
                     <td class="text-right">$1.072.370</td>
                 </tr>
-            
                 <tr>
                     <td>Publicidad Y Redes</td>
                     <td class="text-right">$1.736.912</td>
                 </tr>
-            
                 <tr>
                     <td>Revisar No Identificado</td>
                     <td class="text-right">$61.335</td>
                 </tr>
-            
                 <tr>
                     <td>Seguridad Seguros Alarma</td>
                     <td class="text-right">$334.400</td>
                 </tr>
-            
                 <tr>
                     <td>Servicios</td>
                     <td class="text-right">$6.487.301</td>
                 </tr>
-            
                 <tr>
                     <td>Sistemas Informatica</td>
                     <td class="text-right">$352.695</td>
                 </tr>
-            
                 <tr>
                     <td>Varios Libreria</td>
                     <td class="text-right">$265.674</td>
                 </tr>
-            
                 <tr>
                     <td>Viaticos</td>
                     <td class="text-right">$555.652</td>
                 </tr>
-            
                 <tr style="background-color: #bee3f8; font-weight: bold;">
                     <td>TOTAL EGRESOS GENERALES</td>
                     <td class="text-right">$218.117.374</td>
                 </tr>
             </tbody>
         </table>
-        <hr style="border: none; border-top: 2px solid #cbd5e0; margin: 40px 0;">
+        
+        <hr style="border: none; border-top: 1px solid var(--border-color); margin: 40px 0;">
         
         <h2>Local: Callao</h2>
         <div class="summary-box">
@@ -178,107 +299,86 @@
                 </tr>
             </thead>
             <tbody>
-            
                 <tr>
                     <td>Alquiler Y Expensas</td>
                     <td class="text-right">$5.330.000</td>
                 </tr>
-                
                 <tr>
                     <td>Costo Laboral</td>
                     <td class="text-right">$10.444.514</td>
                 </tr>
-                
                 <tr>
                     <td>Costo Laboral Extraordinario</td>
                     <td class="text-right">$1.433.934</td>
                 </tr>
-                
                 <tr>
                     <td>Descartables Y Consumibles</td>
                     <td class="text-right">$3.461.340</td>
                 </tr>
-                
                 <tr>
                     <td>Equipamiento Y Bazar</td>
                     <td class="text-right">$85.289</td>
                 </tr>
-                
                 <tr>
                     <td>Bienes De Uso Y Utiles</td>
                     <td class="text-right">$73.489</td>
                 </tr>
-                
                 <tr>
                     <td>Carteleria</td>
                     <td class="text-right">$0</td>
                 </tr>
-                
                 <tr>
                     <td>Gastos Bancarios Y Comisiones</td>
                     <td class="text-right">$1.641.048</td>
                 </tr>
-                
                 <tr>
                     <td>Honorarios</td>
                     <td class="text-right">$1.921.351</td>
                 </tr>
-                
                 <tr>
                     <td>Impuestos</td>
                     <td class="text-right">$1.365.726</td>
                 </tr>
-                
                 <tr>
                     <td>Mantenimiento Del Local</td>
                     <td class="text-right">$1.862.867</td>
                 </tr>
-                
                 <tr>
                     <td>Materia Prima</td>
                     <td class="text-right">$12.580.494</td>
                 </tr>
-                
                 <tr>
                     <td>Otras Comisiones Apps</td>
                     <td class="text-right">$225.163</td>
                 </tr>
-                
                 <tr>
                     <td>Publicidad Y Redes</td>
                     <td class="text-right">$364.696</td>
                 </tr>
-                
                 <tr>
                     <td>Revisar No Identificado</td>
                     <td class="text-right">$12.878</td>
                 </tr>
-                
                 <tr>
                     <td>Seguridad Seguros Alarma</td>
                     <td class="text-right">$72.117</td>
                 </tr>
-                
                 <tr>
                     <td>Servicios</td>
                     <td class="text-right">$1.706.053</td>
                 </tr>
-                
                 <tr>
                     <td>Sistemas Informatica</td>
                     <td class="text-right">$117.565</td>
                 </tr>
-                
                 <tr>
                     <td>Varios Libreria</td>
                     <td class="text-right">$41.933</td>
                 </tr>
-                
                 <tr>
                     <td>Viaticos</td>
                     <td class="text-right">$128.591</td>
                 </tr>
-                
                 <tr style="background-color: #edf2f7; font-weight: bold;">
                     <td>TOTAL EGRESOS</td>
                     <td class="text-right">$42.869.048</td>
@@ -304,107 +404,86 @@
                 </tr>
             </thead>
             <tbody>
-            
                 <tr>
                     <td>Alquiler Y Expensas</td>
                     <td class="text-right">$13.042.947</td>
                 </tr>
-                
                 <tr>
                     <td>Costo Laboral</td>
                     <td class="text-right">$54.753.592</td>
                 </tr>
-                
                 <tr>
                     <td>Costo Laboral Extraordinario</td>
                     <td class="text-right">$4.187.858</td>
                 </tr>
-                
                 <tr>
                     <td>Descartables Y Consumibles</td>
                     <td class="text-right">$3.483.581</td>
                 </tr>
-                
                 <tr>
                     <td>Equipamiento Y Bazar</td>
                     <td class="text-right">$1.732.271</td>
                 </tr>
-                
                 <tr>
                     <td>Bienes De Uso Y Utiles</td>
                     <td class="text-right">$1.700.271</td>
                 </tr>
-                
                 <tr>
                     <td>Carteleria</td>
                     <td class="text-right">$32.000</td>
                 </tr>
-                
                 <tr>
                     <td>Gastos Bancarios Y Comisiones</td>
                     <td class="text-right">$4.961.316</td>
                 </tr>
-                
                 <tr>
                     <td>Honorarios</td>
                     <td class="text-right">$3.196.333</td>
                 </tr>
-                
                 <tr>
                     <td>Impuestos</td>
                     <td class="text-right">$3.988.464</td>
                 </tr>
-                
                 <tr>
                     <td>Mantenimiento Del Local</td>
                     <td class="text-right">$5.209.080</td>
                 </tr>
-                
                 <tr>
                     <td>Materia Prima</td>
                     <td class="text-right">$32.051.109</td>
                 </tr>
-                
                 <tr>
                     <td>Otras Comisiones Apps</td>
                     <td class="text-right">$657.567</td>
                 </tr>
-                
                 <tr>
                     <td>Publicidad Y Redes</td>
                     <td class="text-right">$1.065.057</td>
                 </tr>
-                
                 <tr>
                     <td>Revisar No Identificado</td>
                     <td class="text-right">$37.610</td>
                 </tr>
-                
                 <tr>
                     <td>Seguridad Seguros Alarma</td>
                     <td class="text-right">$202.600</td>
                 </tr>
-                
                 <tr>
                     <td>Servicios</td>
                     <td class="text-right">$2.823.988</td>
                 </tr>
-                
                 <tr>
                     <td>Sistemas Informatica</td>
                     <td class="text-right">$117.565</td>
                 </tr>
-                
                 <tr>
                     <td>Varios Libreria</td>
                     <td class="text-right">$182.441</td>
                 </tr>
-                
                 <tr>
                     <td>Viaticos</td>
                     <td class="text-right">$315.448</td>
                 </tr>
-                
                 <tr style="background-color: #edf2f7; font-weight: bold;">
                     <td>TOTAL EGRESOS</td>
                     <td class="text-right">$133.741.098</td>
@@ -430,114 +509,92 @@
                 </tr>
             </thead>
             <tbody>
-            
                 <tr>
                     <td>Alquiler Y Expensas</td>
                     <td class="text-right">$3.403.103</td>
                 </tr>
-                
                 <tr>
                     <td>Costo Laboral</td>
                     <td class="text-right">$13.428.661</td>
                 </tr>
-                
                 <tr>
                     <td>Costo Laboral Extraordinario</td>
                     <td class="text-right">$1.207.705</td>
                 </tr>
-                
                 <tr>
                     <td>Descartables Y Consumibles</td>
                     <td class="text-right">$2.046.843</td>
                 </tr>
-                
                 <tr>
                     <td>Equipamiento Y Bazar</td>
                     <td class="text-right">$878.777</td>
                 </tr>
-                
                 <tr>
                     <td>Bienes De Uso Y Utiles</td>
                     <td class="text-right">$61.895</td>
                 </tr>
-                
                 <tr>
                     <td>Carteleria</td>
                     <td class="text-right">$0</td>
                 </tr>
-                
                 <tr>
                     <td>Gastos Bancarios Y Comisiones</td>
                     <td class="text-right">$1.505.621</td>
                 </tr>
-                
                 <tr>
                     <td>Honorarios</td>
                     <td class="text-right">$1.167.316</td>
                 </tr>
-                
                 <tr>
                     <td>Impuestos</td>
                     <td class="text-right">$1.150.261</td>
                 </tr>
-                
                 <tr>
                     <td>Mantenimiento Del Local</td>
                     <td class="text-right">$820.081</td>
                 </tr>
-                
                 <tr>
                     <td>Materia Prima</td>
                     <td class="text-right">$13.041.898</td>
                 </tr>
-                
                 <tr>
                     <td>Otras Comisiones Apps</td>
                     <td class="text-right">$189.640</td>
                 </tr>
-                
                 <tr>
                     <td>Publicidad Y Redes</td>
                     <td class="text-right">$307.159</td>
                 </tr>
-                
                 <tr>
                     <td>Revisar No Identificado</td>
                     <td class="text-right">$10.847</td>
                 </tr>
-                
                 <tr>
                     <td>Seguridad Seguros Alarma</td>
                     <td class="text-right">$59.683</td>
                 </tr>
-                
                 <tr>
                     <td>Servicios</td>
                     <td class="text-right">$1.957.260</td>
                 </tr>
-                
                 <tr>
                     <td>Sistemas Informatica</td>
                     <td class="text-right">$117.565</td>
                 </tr>
-                
                 <tr>
                     <td>Varios Libreria</td>
                     <td class="text-right">$41.300</td>
                 </tr>
-                
                 <tr>
                     <td>Viaticos</td>
                     <td class="text-right">$111.613</td>
                 </tr>
-                
                 <tr style="background-color: #edf2f7; font-weight: bold;">
                     <td>TOTAL EGRESOS</td>
                     <td class="text-right">$41.507.228</td>
                 </tr>
             </tbody>
         </table>
-            
     </div>
 </body>
 </html>
