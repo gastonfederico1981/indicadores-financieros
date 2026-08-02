@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis y Simulación de Ajustes - San Telmo (Junio)</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        h1 { color: #2c3e50; text-align: center; margin-bottom: 10px; }
+        .nav { text-align: center; margin-bottom: 30px; }
+        .nav a { margin: 0 15px; text-decoration: none; color: #3498db; font-weight: bold; font-size: 16px; padding: 6px 12px; border-radius: 4px; border: 1px solid #3498db; }
+        .nav a.active { background-color: #3498db; color: white; }
+        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 40px; }
+        .summary-box { display: flex; justify-content: space-between; background: #ebf8ff; padding: 15px 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #3182ce; border-top: 2px solid #bee3f8; flex-wrap: wrap; gap: 10px; }
+        .summary-item { text-align: center; flex: 1; min-width: 130px; }
+        .summary-item span { display: block; font-size: 13px; color: #7f8c8d; }
+        .summary-item strong { font-size: 15px; color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; margin-bottom: 30px; }
+        th, td { padding: 10px 14px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+        th { background-color: #2c3e50; color: white; font-weight: 600; }
+        .text-right { text-align: right; }
+        .negative { color: #e74c3c; font-weight: bold; }
+        .positive { color: #27ae60; font-weight: bold; }
+        .card { background: #edf2f7; padding: 15px 20px; border-radius: 6px; margin-bottom: 20px; font-size: 14px; border: 1px solid #cbd5e0; line-height: 1.6; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simulación y Ajuste de Costos - San Telmo (Junio)</h1>
+        <div class="nav">
+            <a href="mayo.html">Mayo 2026</a>
+            <a href="junio.html">Junio 2026</a>
+            <a href="ajustes_san_telmo.html" class="active">Ajustes San Telmo</a>
+        </div>
+
+        <h2>Dotación, Horarios y Estructura Real</h2>
+        <div class="card">
+            <strong>🕒 Horario de Atención:</strong> De 9 a 20 hs.<br>
+            <strong>👥 Personal Base:</strong> 1 Cocina, 1 Ayudante de cocina/Bacha, 1 Caja 8 hs, 1 Salón 8 hs, 1 Caja 4 hs y 1 Salón 4 hs.<br>
+            <strong>🔄 Refuerzos y Francos:</strong> Sábados y domingos, pagos extras, refuerzo de salón 4 hs y pagos de francos.<br>
+            <strong>⚖️ Equivalencia:</strong> Representa un costo real de aproximadamente <strong>5.5 personas</strong>, aunque operativo y salarialmente se venían soportando gastos equivalentes a 8/9 empleados[cite: 1].
+        </div>
+
+        <h2>Comparativa Financiera (Junio: Original vs. Ajustado)</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Concepto</th>
+                    <th class="text-right">Junio Original</th>
+                    <th class="text-right">Junio Ajustado</th>
+                    <th class="text-right">Diferencia / Ahorro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Total Ventas Sin Impuestos</td>
+                    <td class="text-right">$29.039.731</td>
+                    <td class="text-right">$29.039.731</td>
+                    <td class="text-right">$0</td>
+                </tr>
+                <tr>
+                    <td>Costo Laboral (Personal)</td>
+                    <td class="text-right">$16.440.406[cite: 1]</td>
+                    <td class="text-right">$9.650.000</td>
+                    <td class="text-right negative">-$6.790.406</td>
+                </tr>
+                <tr>
+                    <td>CMV (Materia Prima)</td>
+                    <td class="text-right">$13.462.523[cite: 1]</td>
+                    <td class="text-right">$12.116.271[cite: 1]</td>
+                    <td class="text-right negative">-$1.346.252</td>
+                </tr>
+                <tr>
+                    <td>Resto de Egresos y Servicios (Luz/Gas)</td>
+                    <td class="text-right">$10.928.547</td>
+                    <td class="text-right">$9.835.692</td>
+                    <td class="text-right negative">-$1.092.855</td>
+                </tr>
+                <tr style="background-color: #edf2f7; font-weight: bold;">
+                    <td>Total Egresos</td>
+                    <td class="text-right">$40.831.476[cite: 1]</td>
+                    <td class="text-right">$31.601.963</td>
+                    <td class="text-right negative">-$9.229.513</td>
+                </tr>
+                <tr style="font-weight: bold;">
+                    <td>Resultado Económico</td>
+                    <td class="text-right negative">-$11.791.745[cite: 1]</td>
+                    <td class="text-right negative">-$2.562.232</td>
+                    <td class="text-right positive">+$9.229.513</td>
+                </tr>
+                <tr style="font-weight: bold;">
+                    <td>Utilidad / Ventas (%)</td>
+                    <td class="text-right negative">-40.6%[cite: 1]</td>
+                    <td class="text-right negative">-8.8%</td>
+                    <td class="text-right positive">+31.8 pp</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Conclusiones y Palancas de Ahorro</h2>
+        <ul>
+            <li><strong>Optimización de Personal:</strong> Pasar de un gasto de 15M/16M a una estructura ajustada de <strong>9.3M a 10M</strong>[cite: 1] (alineada a la dotación real de 5.5 personas[cite: 1]) genera un recorte directo de entre <strong>5 y 6 millones de pesos</strong>.</li>
+            <li><strong>Servicios y Gastos Generales:</strong> La reducción en el consumo de luz, gas y una baja general del 10% en costos operativos complementarios libera otros <strong>3 a 4 millones</strong>[cite: 1] en ahorro acumulado.</li>
+            <li><strong>Impacto en el Resultado:</strong> Con estas medidas, San Telmo absorbe casi la totalidad de su déficit operativo mensual en junio, reduciendo la pérdida a un nivel marginal de -$2,56M y dejándolo al borde del punto de equilibrio.</li>
+        </ul>
+    </div>
+</body>
+</html>
