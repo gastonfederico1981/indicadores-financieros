@@ -1,4 +1,4 @@
-import json
+﻿import json
 import os
 
 def procesar_datos_financieros():
@@ -8,7 +8,7 @@ def procesar_datos_financieros():
             datos_globales = json.load(f)
     except FileNotFoundError:
         print("No se encontró el archivo datos_locales.json. Verificá la ruta.")
-        return
+        return None
 
     # 2. Recorrer los meses y locales aplicando la fórmula tradicional de CMV
     for mes, locales in datos_globales.items():
@@ -106,7 +106,6 @@ def generar_html(datos_globales):
         active_mayo = "active" if mes == "mayo" else ""
         active_junio = "active" if mes == "junio" else ""
         
-        # Acumuladores para el consolidado general del mes
         cons_ventas_blanco = 0
         cons_ventas_negro = 0
         cons_total_ventas = 0
@@ -124,7 +123,6 @@ def generar_html(datos_globales):
             resultado = info.get("resultado_economico", 0)
             utilidad_pct = info.get("utilidad_sobre_ventas_pct", 0)
             
-            # Sumar al consolidado
             cons_ventas_blanco += ventas_blanco
             cons_ventas_negro += ventas_negro
             cons_total_ventas += total_ventas
@@ -175,11 +173,9 @@ def generar_html(datos_globales):
         </table>
             """
 
-        # Calcular porcentaje de utilidad consolidado global
         cons_utilidad_pct = round((cons_resultado / cons_total_ventas * 100), 1) if cons_total_ventas > 0 else 0
         cons_res_class = "positive" if cons_resultado >= 0 else "negative"
 
-        # Generar bloque HTML del Consolidado General al principio
         html_consolidado = f"""
         <h2>📊 Consolidado General ({mes_cap})</h2>
         <div class="summary-box consolidado">
@@ -220,10 +216,8 @@ def generar_html(datos_globales):
         <hr style="border: none; border-top: 2px solid #cbd5e0; margin: 40px 0;">
         """
 
-        # Unir consolidado + detalle por local
         html_contenido = html_consolidado + html_locales
 
-        # Guardar archivo HTML correspondiente
         nombre_archivo = f"{mes}.html"
         html_final = html_template.format(
             mes_cap=mes_cap,
