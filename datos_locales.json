@@ -8,8 +8,8 @@
                 "inventario_inicial": 2944985,
                 "compras_materia_prima": 12885072,
                 "inventario_final": 3249563,
-                "mermas": 0,
-                "comida_personal": 0,
+                "mermas": 1300000,
+                "comida_personal": 1000000,
                 "consumo_socios": 0,
                 "transferencias_netas": 0,
                 "cmv_calculado": 12580494
@@ -88,8 +88,8 @@
                 "inventario_inicial": 4254170,
                 "compras_materia_prima": 12255557,
                 "inventario_final": 3467829,
-                "mermas": 0,
-                "comida_personal": 0,
+                "mermas": 1300000,
+                "comida_personal": 1000000,
                 "consumo_socios": 0,
                 "transferencias_netas": 0,
                 "cmv_calculado": 13041898
