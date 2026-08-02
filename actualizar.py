@@ -123,6 +123,15 @@ def generar_html(datos_globales):
             resultado = info.get("resultado_economico", 0)
             utilidad_pct = info.get("utilidad_sobre_ventas_pct", 0)
             
+            # Obtener datos de inventario y calcular el % de CMV sobre las ventas
+            inv = info.get("inventario", {})
+            ii = inv.get("inventario_inicial", 0)
+            compras_mp = inv.get("compras_materia_prima", 0)
+            if_val = inv.get("inventario_final", 0)
+            cmv_calc = inv.get("cmv_calculado", 0)
+            
+            cmv_pct = round((cmv_calc / total_ventas * 100), 1) if total_ventas > 0 else 0.0
+            
             cons_ventas_blanco += ventas_blanco
             cons_ventas_negro += ventas_negro
             cons_total_ventas += total_ventas
@@ -136,6 +145,18 @@ def generar_html(datos_globales):
             
             html_locales += f"""
         <h2>Local: {local_cap}</h2>
+        
+        <!-- Tarjeta de Desglose de Inventario y CMV -->
+        <div style="background: #edf2f7; padding: 12px 18px; border-radius: 6px; margin-bottom: 15px; font-size: 14px; border: 1px solid #cbd5e0;">
+            <strong>📦 Determinación del Costo de Mercadería Vendida (CMV / Food Cost):</strong>
+            <ul style="margin: 5px 0 0 20px; padding: 0; color: #4a5568;">
+                <li>Inventario Inicial: {formatear_moneda(ii)}</li>
+                <li>( + ) Compras de Materia Prima: {formatear_moneda(compras_mp)}</li>
+                <li>( - ) Inventario Final: {formatear_moneda(if_val)}</li>
+                <li><strong>(=) CMV Calculado: {formatear_moneda(cmv_calc)} &nbsp;&nbsp;|&nbsp;&nbsp; ({cmv_pct}% sobre las ventas totales)</strong></li>
+            </ul>
+        </div>
+
         <div class="summary-box">
             <div class="summary-item"><span>Ventas en Blanco</span><strong>{formatear_moneda(ventas_blanco)}</strong></div>
             <div class="summary-item"><span>Ventas en Negro</span><strong>{formatear_moneda(ventas_negro)}</strong></div>
