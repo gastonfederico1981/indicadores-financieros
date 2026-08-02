@@ -8,6 +8,10 @@
                 "inventario_inicial": 2944985,
                 "compras_materia_prima": 12885072,
                 "inventario_final": 3249563,
+                "mermas": 0,
+                "comida_personal": 0,
+                "consumo_socios": 0,
+                "transferencias_netas": 0,
                 "cmv_calculado": 12580494
             },
             "egresos": {
@@ -44,6 +48,10 @@
                 "inventario_inicial": 0,
                 "compras_materia_prima": 32051109,
                 "inventario_final": 0,
+                "mermas": 0,
+                "comida_personal": 0,
+                "consumo_socios": 0,
+                "transferencias_netas": 0,
                 "cmv_calculado": 32051109
             },
             "egresos": {
@@ -80,6 +88,10 @@
                 "inventario_inicial": 4254170,
                 "compras_materia_prima": 12255557,
                 "inventario_final": 3467829,
+                "mermas": 0,
+                "comida_personal": 0,
+                "consumo_socios": 0,
+                "transferencias_netas": 0,
                 "cmv_calculado": 13041898
             },
             "egresos": {
@@ -118,6 +130,10 @@
                 "inventario_inicial": 3249563,
                 "compras_materia_prima": 13491041,
                 "inventario_final": 2421463,
+                "mermas": 0,
+                "comida_personal": 0,
+                "consumo_socios": 0,
+                "transferencias_netas": 0,
                 "cmv_calculado": 14319141
             },
             "egresos": {
@@ -154,6 +170,10 @@
                 "inventario_inicial": 0,
                 "compras_materia_prima": 37056624,
                 "inventario_final": 0,
+                "mermas": 0,
+                "comida_personal": 0,
+                "consumo_socios": 0,
+                "transferencias_netas": 0,
                 "cmv_calculado": 37056624
             },
             "egresos": {
@@ -190,6 +210,10 @@
                 "inventario_inicial": 3467829,
                 "compras_materia_prima": 11742864,
                 "inventario_final": 1748170,
+                "mermas": 0,
+                "comida_personal": 0,
+                "consumo_socios": 0,
+                "transferencias_netas": 0,
                 "cmv_calculado": 13462523
             },
             "egresos": {
