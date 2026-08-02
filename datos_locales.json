@@ -12,7 +12,7 @@
                 "comida_personal": 1000000,
                 "consumo_socios": 0,
                 "transferencias_netas": 0,
-                "cmv_calculado": 12580494
+                "cmv_calculado": 14880494
             },
             "egresos": {
                 "alquiler_y_expensas": 5330000,
@@ -26,7 +26,7 @@
                 "honorarios": 1921351,
                 "impuestos": 1365726,
                 "mantenimiento_del_local": 1862867,
-                "materia_prima": 12580494,
+                "materia_prima": 14880494,
                 "otras_comisiones_apps": 225163,
                 "publicidad_y_redes": 364696,
                 "revisar_no_identificado": 12878,
@@ -36,9 +36,9 @@
                 "varios_libreria": 41933,
                 "viaticos": 128591
             },
-            "total_egresos": 42869048,
-            "resultado_economico": -1294558,
-            "utilidad_sobre_ventas_pct": -3.1
+            "total_egresos": 45169048,
+            "resultado_economico": -3594558,
+            "utilidad_sobre_ventas_pct": -8.6
         },
         "madero": {
             "ventas_netas_en_blanco": 72802983,
@@ -92,7 +92,7 @@
                 "comida_personal": 1000000,
                 "consumo_socios": 0,
                 "transferencias_netas": 0,
-                "cmv_calculado": 13041898
+                "cmv_calculado": 15341898
             },
             "egresos": {
                 "alquiler_y_expensas": 3403103,
@@ -106,7 +106,7 @@
                 "honorarios": 1167316,
                 "impuestos": 1150261,
                 "mantenimiento_del_local": 820081,
-                "materia_prima": 13041898,
+                "materia_prima": 15341898,
                 "otras_comisiones_apps": 189640,
                 "publicidad_y_redes": 307159,
                 "revisar_no_identificado": 10847,
@@ -116,9 +116,9 @@
                 "varios_libreria": 41300,
                 "viaticos": 111613
             },
-            "total_egresos": 41507228,
-            "resultado_economico": -6491774,
-            "utilidad_sobre_ventas_pct": -18.5
+            "total_egresos": 43807228,
+            "resultado_economico": -8791774,
+            "utilidad_sobre_ventas_pct": -25.1
         }
     },
     "junio": {

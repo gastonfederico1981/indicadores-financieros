@@ -10,25 +10,31 @@ def procesar_datos_financieros():
         print("No se encontró el archivo datos_locales.json. Verificá la ruta.")
         return None
 
-    # 2. Recorrer los meses y locales aplicando la fórmula tradicional de CMV
+    # 2. Recorrer los meses y locales aplicando la fórmula ampliada de CMV Real
     for mes, locales in datos_globales.items():
         for local, info in locales.items():
             
-            # Obtener datos de inventario
+            # Obtener datos de inventario y ajustes adicionales
             inv = info.get("inventario", {})
             ii = inv.get("inventario_inicial", 0)
             compras = inv.get("compras_materia_prima", 0)
             if_ = inv.get("inventario_final", 0)
             
-            # Aplicar la fórmula tradicional: II + Compras - IF
-            cmv_tradicional = ii + compras - if_
+            mermas = inv.get("mermas", 0)
+            comida_personal = inv.get("comida_personal", 0)
+            consumo_socios = inv.get("consumo_socios", 0)
+            transferencias = inv.get("transferencias_netas", 0) # Positivo si entra, negativo si sale
+            
+            # Fórmula ampliada de CMV Real
+            cmv_teorico = ii + compras - if_
+            cmv_real = cmv_teorico + mermas + comida_personal + consumo_socios + transferencias
             
             # Actualizar el CMV calculado en el bloque de inventario
-            inv["cmv_calculado"] = cmv_tradicional
+            inv["cmv_calculado"] = cmv_real
             
             # Sincronizar el CMV dentro del diccionario de egresos (materia prima)
             if "egresos" in info:
-                info["egresos"]["materia_prima"] = cmv_tradicional
+                info["egresos"]["materia_prima"] = cmv_real
                 
                 # Recalcular el total de egresos sumando todos los conceptos del diccionario
                 total_egresos = sum(info["egresos"].values())
@@ -123,13 +129,17 @@ def generar_html(datos_globales):
             resultado = info.get("resultado_economico", 0)
             utilidad_pct = info.get("utilidad_sobre_ventas_pct", 0)
             
-            # Obtener datos de inventario y calcular el % de CMV sobre las ventas
+            # Obtener datos detallados de inventario y ajustes
             inv = info.get("inventario", {})
             ii = inv.get("inventario_inicial", 0)
             compras_mp = inv.get("compras_materia_prima", 0)
             if_val = inv.get("inventario_final", 0)
-            cmv_calc = inv.get("cmv_calculado", 0)
+            mermas = inv.get("mermas", 0)
+            comida_personal = inv.get("comida_personal", 0)
+            consumo_socios = inv.get("consumo_socios", 0)
+            transferencias = inv.get("transferencias_netas", 0)
             
+            cmv_calc = inv.get("cmv_calculado", 0)
             cmv_pct = round((cmv_calc / total_ventas * 100), 1) if total_ventas > 0 else 0.0
             
             cons_ventas_blanco += ventas_blanco
@@ -146,14 +156,18 @@ def generar_html(datos_globales):
             html_locales += f"""
         <h2>Local: {local_cap}</h2>
         
-        <!-- Tarjeta de Desglose de Inventario y CMV -->
-        <div style="background: #edf2f7; padding: 12px 18px; border-radius: 6px; margin-bottom: 15px; font-size: 14px; border: 1px solid #cbd5e0;">
-            <strong>📦 Determinación del Costo de Mercadería Vendida (CMV / Food Cost):</strong>
-            <ul style="margin: 5px 0 0 20px; padding: 0; color: #4a5568;">
+        <!-- Tarjeta Ampliada de Determinación del CMV Real -->
+        <div style="background: #edf2f7; padding: 15px 20px; border-radius: 6px; margin-bottom: 15px; font-size: 14px; border: 1px solid #cbd5e0;">
+            <strong>📦 Determinación del CMV Real (Food Cost):</strong>
+            <ul style="margin: 8px 0 0 20px; padding: 0; color: #4a5568; line-height: 1.5;">
                 <li>Inventario Inicial: {formatear_moneda(ii)}</li>
                 <li>( + ) Compras de Materia Prima: {formatear_moneda(compras_mp)}</li>
                 <li>( - ) Inventario Final: {formatear_moneda(if_val)}</li>
-                <li><strong>(=) CMV Calculado: {formatear_moneda(cmv_calc)} &nbsp;&nbsp;|&nbsp;&nbsp; ({cmv_pct}% sobre las ventas totales)</strong></li>
+                <li>( + ) Mermas / Vencimientos: {formatear_moneda(mermas)}</li>
+                <li>( + ) Comida de Personal: {formatear_moneda(comida_personal)}</li>
+                <li>( + ) Consumo de Socios: {formatear_moneda(consumo_socios)}</li>
+                <li>( +/- ) Transferencias Netas: {formatear_moneda(transferencias)}</li>
+                <li><strong>(=) CMV REAL FINAL: {formatear_moneda(cmv_calc)} &nbsp;&nbsp;|&nbsp;&nbsp; ({cmv_pct}% sobre ventas)</strong></li>
             </ul>
         </div>
 
