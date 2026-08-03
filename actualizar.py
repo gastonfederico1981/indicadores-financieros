@@ -63,7 +63,7 @@ def procesar_datos_financieros():
     return datos_globales
 
 def generar_html(datos_globales):
-    # Plantilla HTML unificada con diseño profesional y navegación
+    # Plantilla HTML unificada con diseño profesional y navegación ampliada
     html_template = """<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -74,7 +74,7 @@ def generar_html(datos_globales):
         .container {{ max-width: 1200px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }}
         h1 {{ color: #2c3e50; text-align: center; margin-bottom: 10px; }}
         .nav {{ text-align: center; margin-bottom: 30px; }}
-        .nav a {{ margin: 0 15px; text-decoration: none; color: #3498db; font-weight: bold; font-size: 16px; padding: 6px 12px; border-radius: 4px; border: 1px solid #3498db; }}
+        .nav a {{ margin: 0 10px; text-decoration: none; color: #3498db; font-weight: bold; font-size: 16px; padding: 6px 12px; border-radius: 4px; border: 1px solid #3498db; }}
         .nav a.active {{ background-color: #3498db; color: white; }}
         h2 {{ color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 8px; margin-top: 40px; text-transform: capitalize; }}
         .summary-box {{ display: flex; justify-content: space-between; background: #f8f9fa; padding: 15px 20px; border-radius: 6px; margin-bottom: 20px; border-left: 4px solid #3498db; flex-wrap: wrap; gap: 10px; }}
@@ -96,6 +96,7 @@ def generar_html(datos_globales):
         <div class="nav">
             <a href="mayo.html" class="{active_mayo}">Mayo 2026</a>
             <a href="junio.html" class="{active_junio}">Junio 2026</a>
+            <a href="comparativo.html" class="{active_comparativo}">Comparativo</a>
         </div>
         
         {html_contenido}
@@ -111,6 +112,7 @@ def generar_html(datos_globales):
         mes_cap = mes.capitalize()
         active_mayo = "active" if mes == "mayo" else ""
         active_junio = "active" if mes == "junio" else ""
+        active_comparativo = "" # Vacío por defecto en los reportes mensuales individuales
         
         cons_ventas_blanco = 0
         cons_ventas_negro = 0
@@ -258,6 +260,7 @@ def generar_html(datos_globales):
             mes_cap=mes_cap,
             active_mayo=active_mayo,
             active_junio=active_junio,
+            active_comparativo=active_comparativo,
             html_contenido=html_contenido
         )
         
