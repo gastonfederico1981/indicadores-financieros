@@ -1,0 +1,4 @@
+[server]
+fileWatcherType = "none"
+# O alternativamente podés probar cambiando el mecanismo de monitoreo si estuviera disponible:
+# fileWatcherType = "poll"
