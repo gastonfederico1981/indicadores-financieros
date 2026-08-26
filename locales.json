@@ -1,0 +1,477 @@
+{
+    "mayo": {
+        "callao": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "Inventario Inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Compras Materia Prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Inventario Final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Comida Personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Consumo Socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Transferencias Netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "Alquiler y Expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Costo Laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Materia Prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Servicios",
+                    "Monto": 0.0
+                }
+            ]
+        },
+        "madero": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "Inventario Inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Compras Materia Prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Inventario Final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Comida Personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Consumo Socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Transferencias Netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "Alquiler y Expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Costo Laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Materia Prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Servicios",
+                    "Monto": 0.0
+                }
+            ]
+        },
+        "san_telmo": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "Inventario Inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Compras Materia Prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Inventario Final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Comida Personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Consumo Socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Transferencias Netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "Alquiler y Expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Costo Laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Materia Prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "Servicios",
+                    "Monto": 0.0
+                }
+            ]
+        },
+        "san telmo": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "inventario_inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "compras_materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "inventario_final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "comida_personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "consumo_socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "transferencias_netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "alquiler_y_expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "costo_laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "servicios",
+                    "Monto": 0.0
+                }
+            ]
+        }
+    },
+    "junio": {
+        "callao": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "inventario_inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "compras_materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "inventario_final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "comida_personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "consumo_socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "transferencias_netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "alquiler_y_expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "costo_laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "servicios",
+                    "Monto": 0.0
+                }
+            ]
+        },
+        "madero": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "inventario_inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "compras_materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "inventario_final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "comida_personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "consumo_socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "transferencias_netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "alquiler_y_expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "costo_laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "servicios",
+                    "Monto": 0.0
+                }
+            ]
+        },
+        "san telmo": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "inventario_inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "compras_materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "inventario_final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "comida_personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "consumo_socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "transferencias_netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "alquiler_y_expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "costo_laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "servicios",
+                    "Monto": 0.0
+                }
+            ]
+        }
+    },
+    "julio": {
+        "callao": {
+            "ventas_netas_en_blanco": 0.0,
+            "ventas_totales_en_negro": 0.0,
+            "inventario": [
+                {
+                    "Rubro": "inventario_inicial",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "compras_materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "inventario_final",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "mermas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "comida_personal",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "consumo_socios",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "transferencias_netas",
+                    "Monto": 0.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "alquiler_y_expensas",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "costo_laboral",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "servicios",
+                    "Monto": 0.0
+                }
+            ]
+        },
+        "petrona": {
+            "ventas_netas_en_blanco": 1200000.0,
+            "ventas_totales_en_negro": 1000000.0,
+            "inventario": [
+                {
+                    "Rubro": "inventario_inicial",
+                    "Monto": 1000000.0
+                },
+                {
+                    "Rubro": "compras_materia_prima",
+                    "Monto": 500000.0
+                },
+                {
+                    "Rubro": "inventario_final",
+                    "Monto": 1200000.0
+                },
+                {
+                    "Rubro": "mermas",
+                    "Monto": 10000.0
+                },
+                {
+                    "Rubro": "comida_personal",
+                    "Monto": 100000.0
+                },
+                {
+                    "Rubro": "consumo_socios",
+                    "Monto": 100000.0
+                },
+                {
+                    "Rubro": "transferencias_netas",
+                    "Monto": 100000.0
+                }
+            ],
+            "egresos": [
+                {
+                    "Rubro": "alquiler_y_expensas",
+                    "Monto": 2000000.0
+                },
+                {
+                    "Rubro": "costo_laboral",
+                    "Monto": 15000000.0
+                },
+                {
+                    "Rubro": "materia_prima",
+                    "Monto": 0.0
+                },
+                {
+                    "Rubro": "servicios",
+                    "Monto": 500000.0
+                }
+            ],
+            "total_ventas_sin_impuestos": 2200000.0
+        }
+    }
+}
